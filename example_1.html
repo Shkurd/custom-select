@@ -169,5 +169,76 @@
 
     </script>
     
+    <!-- one more example -->
+    <style>
+        .test-select-wraper {
+            position: relative;
+            width: 200px;
+        }
+
+        .test-select-label {
+            position: absolute;
+            top: 17px;
+            right: 15px;
+            width: 10px;
+            height: 10px;
+            border-bottom: 2px solid blue;
+            border-left: 2px solid blue;
+            transform: rotate(135deg);
+        }
+
+        .test-select-label-active {
+            transform: rotate(-45deg);
+            top: 12px;
+        }
+
+        .test-select {
+            width: 100%;
+            height: 40px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding-left: 5px;
+            padding: 10px;
+            font-size: 18px;
+            font-family: 'Open Sans', sans-serif;
+            color: #555;
+            background: transparent;
+            background-image: none;
+            border: 1px solid rgb(41, 18, 18);
+            position: relative;
+            z-index: 2;
+            appearance: none; 
+        }
+        .test-select > option{
+            font-size: 18px;
+            font-family: 'Open Sans', sans-serif;
+            color: #555;
+            background-color: rgb(247, 247, 247);
+            background-image: none;
+            font-size: 18px;
+            height: 50px;
+            padding: 15px;
+            border: 1px solid rgb(41, 18, 18);
+        }
+    </style>
+
+    <div class="test-select-wraper">
+        <select class="test-select" name="test-select" id="testSelect">
+            <option value="Option 1">Option 1</option>
+            <option value="Option 1">Option 2</option>
+            <option value="Option 1">Option 3</option>
+            <option value="Option 1">Option 4</option>
+            <option value="Option 1">Option 5</option>
+        </select>
+        <label class="test-select-label" for="testSelect"></label>
+    </div>
+
+    <script>
+        document.querySelector(".test-select").addEventListener("click", function() {
+            let testSelectLabel = document.querySelector(".test-select-label")
+            testSelectLabel.classList.toggle("test-select-label-active");
+        });
+    </script> 
+    
 </body>
 </html>
